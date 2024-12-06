@@ -1,6 +1,18 @@
 # HWPointCloudProcess
 generate polygonal mesh with texture
 
+HWPointCloudProcess PipeLine:
+
+<img src="readme_images/pipeline.png" width="80%">
+
+Textured mesh Comparision(bundleFusion; Wang's Method and Our Method;):
+
+<img src="readme_images/1_compare.png" width="80%">
+
+
+Textured mesh Comparision(Splatam; Our Method):
+
+<img src="readme_images/2_compare.png" width="80%">
 
 适用的系统：windows(其它系统不可适用)
 
