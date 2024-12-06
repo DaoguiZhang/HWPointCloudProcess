@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1176</width>
+    <height>913</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="openglWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>741</width>
+      <height>731</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1176</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionClear"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Filter</string>
+    </property>
+    <addaction name="actionSOR"/>
+    <addaction name="actionMLS"/>
+   </widget>
+   <widget class="QMenu" name="menuMesh">
+    <property name="title">
+     <string>Mesh</string>
+    </property>
+    <addaction name="actionConstruct"/>
+    <addaction name="actionSimplify"/>
+    <addaction name="actionTexture"/>
+    <addaction name="actionTexture_AfterRemoving"/>
+    <addaction name="actionEdgeSwap"/>
+   </widget>
+   <widget class="QMenu" name="menucam">
+    <property name="title">
+     <string>Cam</string>
+    </property>
+    <addaction name="actionImport"/>
+   </widget>
+   <widget class="QMenu" name="menuPlane">
+    <property name="title">
+     <string>Plane</string>
+    </property>
+    <addaction name="actionEditPlane"/>
+    <addaction name="actionPlaneOperation"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuMesh"/>
+   <addaction name="menucam"/>
+   <addaction name="menuPlane"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionSOR"/>
+   <addaction name="actionMLS"/>
+   <addaction name="separator"/>
+   <addaction name="actionConstruct"/>
+   <addaction name="actionSimplify"/>
+   <addaction name="actionTexture"/>
+   <addaction name="actionSunLight"/>
+   <addaction name="actionShowWired"/>
+   <addaction name="actionPlaneOperation"/>
+   <addaction name="actionRemoveObjFromSecene"/>
+   <addaction name="actionMergeCloudPoints"/>
+   <addaction name="actionImport"/>
+   <addaction name="actionPolygonSnap"/>
+   <addaction name="actionShowPolygon"/>
+   <addaction name="actionConvertFilesAction"/>
+   <addaction name="actionPickPoint"/>
+   <addaction name="actionoutdoorFlag"/>
+   <addaction name="actionCompletePolygon"/>
+   <addaction name="actionActionSampleInPolygon"/>
+   <addaction name="actionMergePointCloud"/>
+   <addaction name="actionCopy2PolyView"/>
+   <addaction name="actionMergeObj"/>
+   <addaction name="separator"/>
+   <addaction name="actionRenderColor"/>
+   <addaction name="actionRenderAllColors"/>
+   <addaction name="actionload_pnts_segs"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="DockableDbTree">
+   <property name="minimumSize">
+    <size>
+     <width>343</width>
+     <height>280</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>DB Tree</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_6">
+     <item row="0" column="0">
+      <widget class="QListWidget" name="DbItemListWidget"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="DockableParameters">
+   <property name="minimumSize">
+    <size>
+     <width>343</width>
+     <height>460</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Parameters</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="0" column="0">
+      <widget class="QToolBox" name="toolBox">
+       <property name="minimumSize">
+        <size>
+         <width>321</width>
+         <height>391</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="pageSORParams">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>325</width>
+          <height>320</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <attribute name="label">
+         <string>SORParams</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelPointNum">
+             <property name="text">
+              <string>Number of points to use for
+mean distance estimate </string>
+             </property>
+             <property name="scaledContents">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBoxPointNum">
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="value">
+              <number>8</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Standard deviation 
+multiplier threshold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinMultiplier">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>100000.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <widget class="QDialogButtonBox" name="buttonBoxSOR">
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="pageMLSParams">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>287</width>
+          <height>237</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>MLSParams</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0" colspan="2">
+          <layout class="QFormLayout" name="formLayoutMSLRadius">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Search radius</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxSearchRadius">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="singleStep">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="value">
+              <double>0.010000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="checkBoxNormal">
+           <property name="text">
+            <string>Compute Normal</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="checkBoxPolynomial">
+           <property name="text">
+            <string>Use Polynomial</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <layout class="QFormLayout" name="formLayoutOrder">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Polynomial Order</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxOrder">
+             <property name="singleStep">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Squared Gaussian
+Parameter</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxGassian">
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="singleStep">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="value">
+              <double>0.000100000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <layout class="QFormLayout" name="formLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Upsample Method</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="UpsampleMethodsComboBox">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="0" colspan="2">
+          <widget class="QGroupBox" name="SampleLocalGroupBox">
+           <property name="title">
+            <string>Sample Local Plane</string>
+           </property>
+           <widget class="QWidget" name="formLayoutWidget_8">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>14</y>
+              <width>301</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <layout class="QFormLayout" name="formLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Upsample radius</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="SampleRadiusSpinBox">
+               <property name="maximum">
+                <double>10000.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.000100000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="formLayoutWidget_9">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>40</y>
+              <width>301</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <layout class="QFormLayout" name="formLayout_6">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Upsample stepsize</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="SampleStepSpinBox">
+               <property name="decimals">
+                <number>4</number>
+               </property>
+               <property name="maximum">
+                <double>1000000.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.000100000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="2">
+          <widget class="QGroupBox" name="RandomUniformGroupBox">
+           <property name="title">
+            <string>Random Uniform Density</string>
+           </property>
+           <widget class="QWidget" name="formLayoutWidget_10">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>13</y>
+              <width>301</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <layout class="QFormLayout" name="formLayout_8">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Step Point Density</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="RandomUniformSpinBox">
+               <property name="maximum">
+                <number>100000000</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDialogButtonBox" name="buttonBoxIdentifyCheck">
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>306</width>
+          <height>279</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>ExtractPlaneParam</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <layout class="QFormLayout" name="formLayout_plane">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>Min support points per primitive</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBoxPlanePointNum">
+             <property name="maximum">
+              <number>100000</number>
+             </property>
+             <property name="value">
+              <number>500</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxCeilHeight">
+             <property name="decimals">
+              <number>5</number>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>Small Plane merge height</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxPlaneMergeHeight">
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>Max normal deviation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxMaxNorm">
+             <property name="maximum">
+              <double>360.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>20.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>Ceil height</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>Min Plane Width</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxPlaneWidth">
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="maximum">
+              <double>999.990000000000009</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.500000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QFormLayout" name="formLayout_plane_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string>Min points number for merge</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBox_min_merge_pnts">
+             <property name="maximum">
+              <number>100000000</number>
+             </property>
+             <property name="value">
+              <number>50000</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_22">
+             <property name="text">
+              <string>Min Len-Wid ratio for merge</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_xy">
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="maximum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.000001000000000</double>
+             </property>
+             <property name="value">
+              <double>0.020000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_23">
+             <property name="text">
+              <string>Min area for merge</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_area">
+             <property name="decimals">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <double>100000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="KnnSpinBox">
+             <property name="value">
+              <number>20</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_24">
+             <property name="text">
+              <string>K of Knn</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <widget class="QDialogButtonBox" name="buttonBoxIdentifyCheck_4">
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="pageConstructionParams">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>98</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>ContructionParams</string>
+        </attribute>
+        <widget class="QWidget" name="formLayoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>311</width>
+           <height>154</height>
+          </rect>
+         </property>
+         <layout class="QFormLayout" name="formLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Voxel length</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QDoubleSpinBox" name="doubleSpinBoxVoxelLength">
+            <property name="decimals">
+             <number>5</number>
+            </property>
+            <property name="singleStep">
+             <double>0.000010000000000</double>
+            </property>
+            <property name="value">
+             <double>0.020000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Volume trunc length</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDoubleSpinBox" name="doubleSpinBoxTruncLength">
+            <property name="decimals">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <double>1000000.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.001000000000000</double>
+            </property>
+            <property name="value">
+             <double>0.040000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Volume Resolution
+(x,y,z)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinBox_x">
+            <property name="maximum">
+             <number>1000000</number>
+            </property>
+            <property name="value">
+             <number>10000</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinBox_z">
+            <property name="maximum">
+             <number>1000000</number>
+            </property>
+            <property name="value">
+             <number>10000</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="spinBox_y">
+            <property name="maximum">
+             <number>1000000</number>
+            </property>
+            <property name="value">
+             <number>10000</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QDialogButtonBox" name="buttonBoxIdentifyCheck_2">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>160</y>
+           <width>156</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="pageSimpificationsParams">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>305</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>SimplificationParams</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0" colspan="2">
+          <layout class="QFormLayout" name="formLayoutSimplify">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Target number of
+faces</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Target percentage 
+(0-1)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxPercentage">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.001000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.500000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Quality threshold</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxThreshold">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.000100000000000</double>
+             </property>
+             <property name="value">
+              <double>0.300000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBoxTargetFaces">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBoxBoundary">
+           <property name="text">
+            <string>Preserve Bundary of the mesh</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <layout class="QFormLayout" name="formLayoutSimplify_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>Boundary Preserving Weight</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxBoundaryWeight"/>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="0">
+          <widget class="QCheckBox" name="checkBoxNormal_2">
+           <property name="text">
+            <string>Presere Normal</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QCheckBox" name="checkBoxTopology">
+           <property name="text">
+            <string>Preserve Topology</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBoxOptimal">
+           <property name="text">
+            <string>Optimal position of simplified vertices</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBoxPlanarsimplify">
+           <property name="text">
+            <string>Planar Simplification</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDialogButtonBox" name="buttonBoxIdentifyCheck_3">
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="DockableConsole">
+   <property name="windowTitle">
+    <string>Console</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccOpen.png</normaloff>images/ccOpen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSave.png</normaloff>images/ccSave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccDeleteSF.png</normaloff>images/ccDeleteSF.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="actionSOR">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSORFilter.png</normaloff>images/ccSORFilter.png</iconset>
+   </property>
+   <property name="text">
+    <string>SOR</string>
+   </property>
+  </action>
+  <action name="actionMLS">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/typeNormal.png</normaloff>images/typeNormal.png</iconset>
+   </property>
+   <property name="text">
+    <string>MLS</string>
+   </property>
+  </action>
+  <action name="actionConstruct">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccClippingBox.png</normaloff>images/ccClippingBox.png</iconset>
+   </property>
+   <property name="text">
+    <string>Construct</string>
+   </property>
+  </action>
+  <action name="actionSimplify">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/dbSubMeshSymbol.png</normaloff>images/dbSubMeshSymbol.png</iconset>
+   </property>
+   <property name="text">
+    <string>Simplify</string>
+   </property>
+  </action>
+  <action name="actionTexture">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSamplePoints.png</normaloff>images/ccSamplePoints.png</iconset>
+   </property>
+   <property name="text">
+    <string>Texture</string>
+   </property>
+  </action>
+  <action name="actionSunLight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSunLight.png</normaloff>images/ccSunLight.png</iconset>
+   </property>
+   <property name="text">
+    <string>SunLight</string>
+   </property>
+  </action>
+  <action name="actionShowWired">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/primCone.gif</normaloff>images/primCone.gif</iconset>
+   </property>
+   <property name="text">
+    <string>ShowWired</string>
+   </property>
+  </action>
+  <action name="actionPickPoint">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccPointPicking.png</normaloff>images/ccPointPicking.png</iconset>
+   </property>
+   <property name="text">
+    <string>PickPoint</string>
+   </property>
+  </action>
+  <action name="actionRemoveObjFromSecene">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccDeleteSF.png</normaloff>images/ccDeleteSF.png</iconset>
+   </property>
+   <property name="text">
+    <string>RemoveObjFromSecene</string>
+   </property>
+  </action>
+  <action name="actionMergeCloudPoints">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/store.png</normaloff>images/store.png</iconset>
+   </property>
+   <property name="text">
+    <string>MergeCloudPoints</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/dbCalibratedImageSymbol.png</normaloff>images/dbCalibratedImageSymbol.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionEditPlane">
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </action>
+  <action name="actionPlaneOperation">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/square.png</normaloff>images/square.png</iconset>
+   </property>
+   <property name="text">
+    <string>Operation</string>
+   </property>
+  </action>
+  <action name="actionTexture_AfterRemoving">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSegment.png</normaloff>images/ccSegment.png</iconset>
+   </property>
+   <property name="text">
+    <string>Texture_AfterRemoving</string>
+   </property>
+  </action>
+  <action name="actionEdgeSwap">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSwapUpDown.png</normaloff>images/ccSwapUpDown.png</iconset>
+   </property>
+   <property name="text">
+    <string>EdgeSwap</string>
+   </property>
+  </action>
+  <action name="actionPolygonSnap">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/unfoldSmall.png</normaloff>images/unfoldSmall.png</iconset>
+   </property>
+   <property name="text">
+    <string>PolygonSnap</string>
+   </property>
+  </action>
+  <action name="actionShowPolygon">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccViewZpos.png</normaloff>images/ccViewZpos.png</iconset>
+   </property>
+   <property name="text">
+    <string>showPolygon</string>
+   </property>
+  </action>
+  <action name="actionActionSampleInPolygon">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSampleCloud.png</normaloff>images/ccSampleCloud.png</iconset>
+   </property>
+   <property name="text">
+    <string>SampleInPolygon</string>
+   </property>
+  </action>
+  <action name="actionCompletePolygon">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/dbAreaLabelSymbol.png</normaloff>images/dbAreaLabelSymbol.png</iconset>
+   </property>
+   <property name="text">
+    <string>completePolygon</string>
+   </property>
+  </action>
+  <action name="actionoutdoorFlag">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccViewYpos.png</normaloff>images/ccViewYpos.png</iconset>
+   </property>
+   <property name="text">
+    <string>outdoorFlag</string>
+   </property>
+  </action>
+  <action name="actionConvertFilesAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/ccSwapUpDown.png</normaloff>images/ccSwapUpDown.png</iconset>
+   </property>
+   <property name="text">
+    <string>ConvertFilesAction</string>
+   </property>
+  </action>
+  <action name="actionMergePointCloud">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/merge.png</normaloff>../images/merge.png</iconset>
+   </property>
+   <property name="text">
+    <string>MergePointCloud</string>
+   </property>
+  </action>
+  <action name="actionMergeObj">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/merge_obj.jpg</normaloff>../images/merge_obj.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>MergeObj</string>
+   </property>
+  </action>
+  <action name="actionCopy2PolyView">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/ccCloudMeshDistance.png</normaloff>../images/ccCloudMeshDistance.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy2PolyView</string>
+   </property>
+  </action>
+  <action name="actionRenderColor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/ccViewerBasedPerspective32.png</normaloff>../images/ccViewerBasedPerspective32.png</iconset>
+   </property>
+   <property name="text">
+    <string>RenderCurColorImg</string>
+   </property>
+  </action>
+  <action name="actionRenderAllColors">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/dbMaterialSymbol.png</normaloff>../images/dbMaterialSymbol.png</iconset>
+   </property>
+   <property name="text">
+    <string>RenderAllColorImg</string>
+   </property>
+   <property name="toolTip">
+    <string>RenderAllColorImg</string>
+   </property>
+  </action>
+  <action name="actionload_pnts_segs">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/typeGrayColor.png</normaloff>../images/typeGrayColor.png</iconset>
+   </property>
+   <property name="text">
+    <string>load_pnts_segs</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="mainwindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>

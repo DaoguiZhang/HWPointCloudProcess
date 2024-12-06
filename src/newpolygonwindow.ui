@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1021</width>
+    <height>667</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="2">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_12">
+       <item row="2" column="0" colspan="2">
+        <widget class="QToolBox" name="toolBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>2</horstretch>
+           <verstretch>9</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="currentIndex">
+          <number>3</number>
+         </property>
+         <widget class="QWidget" name="pagePolygonExtractionParams">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>279</width>
+            <height>361</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>多边形提取参数</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="7" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxMinDistance"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxLengthPerPixel"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="labelSmoothRegionDiameter">
+             <property name="text">
+              <string>smooth region diameter</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="spinBoxDilateWidth"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="labelPolygonSmoothMu">
+             <property name="text">
+              <string>polygon smoothing mu</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxMaxTheta"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="labelDilateWidth">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>6</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>dilate width</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="labelSamplingRate">
+             <property name="text">
+              <string>sampling rate</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="labelMaxTheta">
+             <property name="text">
+              <string>max theta</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelAlpha">
+             <property name="text">
+              <string>alpha</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelLengthPerPixel">
+             <property name="text">
+              <string>length per pixel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="labelMinDistance">
+             <property name="text">
+              <string>min distance</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxPolygonSmoothingMu"/>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="spinBoxSamplingRate"/>
+           </item>
+           <item row="4" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxSmoothRegionDiameter"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxAlpha"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageSmallPolygonParams">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>279</width>
+            <height>361</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>小平面判定参数</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="2" column="0">
+            <widget class="QLabel" name="labelMinHeight">
+             <property name="text">
+              <string>高度</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxMinHeight"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBoxMinVertexNum"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelMinWidth">
+             <property name="text">
+              <string>宽度</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxMinWidth"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="labelMinArea">
+             <property name="text">
+              <string>面积</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxMinArea"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelMinVertexNum">
+             <property name="text">
+              <string>顶点数</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageAutoExpandParams">
+          <attribute name="label">
+           <string>AutoExpand参数</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxRMax"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelRMax">
+             <property name="text">
+              <string>r_max</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageMoveStepParams">
+          <attribute name="label">
+           <string>移动操作步长</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelTranslateStep">
+             <property name="text">
+              <string>平移距离（米）</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxTranslateStep"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelRotateStep">
+             <property name="text">
+              <string>旋转角度（角度）</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBoxRotateStep"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>显示模式</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QRadioButton" name="radioButtonSemantic">
+            <property name="text">
+             <string>语义信息</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonDelete">
+            <property name="text">
+             <string>是否删除</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>选择模式</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_13">
+          <item row="0" column="0">
+           <widget class="QRadioButton" name="radioButtonPolygon">
+            <property name="text">
+             <string>多边形(1)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QRadioButton" name="radioButtonPoint">
+            <property name="text">
+             <string>顶点(3)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QRadioButton" name="radioButtonLine">
+            <property name="text">
+             <string>线段(2)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QRadioButton" name="radioButtonBuilding">
+            <property name="text">
+             <string>建筑</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="HW::PolygonGLWindow" name="openGLWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>5</horstretch>
+        <verstretch>10</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>5</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="5">
+        <widget class="QSpinBox" name="spinBoxSemanticData"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="labelVertexNumData">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="labelVertexNum">
+         <property name="text">
+          <string>顶点数</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelPolygonIndex">
+         <property name="text">
+          <string>多边形序号</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7">
+        <widget class="QLabel" name="labelNormal_2">
+         <property name="text">
+          <string>0,0,0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <widget class="QLabel" name="labelNormal">
+         <property name="text">
+          <string>法线</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="labelSemantic">
+         <property name="text">
+          <string>语义</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelPolygonIndexData">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelVertexIndex">
+         <property name="text">
+          <string>顶点序号</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="7">
+        <widget class="QLabel" name="labelVertexIndexData">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>5</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>(-1,-1)</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1021</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionDelete"/>
+   <addaction name="actionCreate"/>
+   <addaction name="actionExpand"/>
+   <addaction name="actionAutoExpand"/>
+   <addaction name="actionClearBuffer"/>
+  </widget>
+  <action name="actionUndo">
+   <property name="text">
+    <string>撤销(B)</string>
+   </property>
+   <property name="toolTip">
+    <string>撤销</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>重做(R)</string>
+   </property>
+   <property name="toolTip">
+    <string>重做</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>删除(D)</string>
+   </property>
+   <property name="toolTip">
+    <string>删除点、线段或多边形</string>
+   </property>
+  </action>
+  <action name="actionCreate">
+   <property name="text">
+    <string>创建多边形(C)</string>
+   </property>
+   <property name="toolTip">
+    <string>创建一个新多边形</string>
+   </property>
+  </action>
+  <action name="actionExpand">
+   <property name="text">
+    <string>扩展(E)</string>
+   </property>
+   <property name="toolTip">
+    <string>将一个多边形扩展到另一个多边形</string>
+   </property>
+  </action>
+  <action name="actionAutoExpand">
+   <property name="text">
+    <string>自动扩展</string>
+   </property>
+   <property name="toolTip">
+    <string>自动扩展多边形</string>
+   </property>
+  </action>
+  <action name="actionClearBuffer">
+   <property name="text">
+    <string>清空选择对象</string>
+   </property>
+   <property name="toolTip">
+    <string>清空选中的点、线段和平面</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HW::PolygonGLWindow</class>
+   <extends>QOpenGLWidget</extends>
+   <header>PolygonGLWindow.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
