@@ -1,7 +1,7 @@
 # HWPointCloudProcess
 generate polygonal mesh with texture
 
-HWPointCloudProcess PipeLine:
+## HWPointCloudProcess PipeLine:
 
 <img src="readme_images/pipeline.png" width="80%">
 
@@ -15,6 +15,8 @@ Textured mesh Comparision(Splatam; Our Method):
 <img src="readme_images/2_compare.png" width="80%">
 
 适用的系统：windows(其它系统不可适用)
+
+## Dependencies
 
 一 编译本系统，需要安装第三方库：
 1）CUDA，VCG，OpenCV，Eigen3，fmt，gflags，glog，ceres，json，Boost，PCL，TextureLTbC，Tbb，rayint，mve
@@ -32,4 +34,8 @@ CGAL，glm，assimp，glm
 使用的教程，后续提供。
 
 对于数据，详细见：
+
+## License
+
+MIT License. See the LICENSE file for details.
 
